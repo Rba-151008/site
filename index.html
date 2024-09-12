@@ -293,9 +293,27 @@
         <div class="top"></div>
         <div class="pole"></div>
     </div>
-    <audio autoplay loop>
+   <audio id="miCancion">
         <source src="Downald.mp3" type="audio/mpeg">
+      
       </audio>
+    
+      <button id="botonPlay" onclick="reproducirPausar()">Play</button>
+    
+      <script>
+        function reproducirPausar() {
+          var cancion = document.getElementById("miCancion");
+          var boton = document.getElementById("botonPlay");
+    
+          if (cancion.paused) {
+            cancion.play();
+            boton.textContent = "Pausa";
+          } else {
+            cancion.pause();
+            boton.textContent = "Play";
+          }
+        }
+      </script>
 </body>
 
 </html>
